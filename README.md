@@ -21,6 +21,43 @@ build-images.bat
 ```
 - when prompted to start the Spark cluster, go to the `spark-cluster` directory and run `docker compose up --scale spark-worker=3` to spin up the Spark containers with 3 worker nodes
 
+### Run the Python lessons in Docker
+
+If you want to avoid installing Java locally, you can run the PySpark examples inside a container instead.
+
+Build the image:
+```
+docker compose -f docker-compose.pyspark.yml build
+```
+
+Run the default lesson script:
+```
+docker compose -f docker-compose.pyspark.yml run --rm pyspark-runner
+```
+
+Run a different Python file from this repo:
+```
+docker compose -f docker-compose.pyspark.yml run --rm pyspark-runner python src/main/python/your_script.py
+```
+
+This container includes Python 3.11, OpenJDK 17, and PySpark 3.5.0, and mounts the repo into `/workspace` so your code and data stay on the host machine.
+
+### VS Code workspace integration
+
+This repo includes workspace-only VS Code launch and task entries for running Python files in Docker.
+
+In the Run and Debug panel, select:
+```
+Python: Current File in Docker
+```
+
+Or from the Command Palette, run:
+```
+Tasks: Run Task -> Run Current Python File in Docker
+```
+
+These settings live under `.vscode/` in this repository, so they only affect this workspace and do not change your global VS Code Python configuration.
+
 ### Spark Cluster Troubleshooting
 
 #### Windows users - '\r' command not found

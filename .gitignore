@@ -213,5 +213,18 @@ spark-warehouse/
 .jvmopts
 .bsp
 
+# Local Python environments and caches
+.venv/
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local download artifacts
+spark.tgz
+
+# Hadoop/Spark filesystem checksum sidecars
+*.crc
+
 
 # End of https://www.gitignore.io/api/sbt,scala,spark,intellij

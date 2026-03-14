@@ -1,0 +1,8 @@
+services:
+  pyspark-runner:
+    build:
+      context: .
+      dockerfile: docker/pyspark/Dockerfile
+    working_dir: /workspace
+    volumes:
+      - .:/workspace

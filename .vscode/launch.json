@@ -2,13 +2,39 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Python: Current File in Docker",
+      "type": "node-terminal",
+      "request": "launch",
+      "purpose": ["debug-in-terminal"],
+      "command": "$rel = '${relativeFile}'.Replace('\\', '/'); docker compose -f docker-compose.pyspark.yml run --rm pyspark-runner python \"/workspace/$rel\""
+    },
+    {
+      "name": "Python: dataframes_basics.py in Docker",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "docker compose -f docker-compose.pyspark.yml run --rm pyspark-runner python /workspace/src/main/python/dataframes_basics.py"
+    },
+    {
       "type": "scala",
       "request": "launch",
       "name": "Playground",
       "mainClass": "playground.Playground",
       "buildTarget": "file:/C:/Users/santi/OneDrive/Desktop/Workspace/spark-essentials/?id=spark-essentials",
       "args": [],
-      "jvmOptions": ["--add-opens", "java.base/sun.nio.ch=ALL-UNNAMED"],
+      "jvmOptions": [
+        "--add-opens",
+        "java.base/sun.nio.ch=ALL-UNNAMED"
+      ],
+      "env": {}
+    },
+    {
+      "type": "scala",
+      "request": "launch",
+      "name": "DataFramesBasicsV2",
+      "mainClass": "part2dataframes.DataFramesBasicsV2",
+      "buildTarget": "file:/C:/Users/santi/OneDrive/Desktop/Workspace/spark-essentials/?id=spark-essentials",
+      "args": [],
+      "jvmOptions": [],
       "env": {}
     }
   ]
