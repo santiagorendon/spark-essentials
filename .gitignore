@@ -148,6 +148,17 @@ conf/*.xml
 conf/java-opts
 conf/slaves
 dependency-reduced-pom.xml
+
+### Metals ###
+.metals/
+
+### Bloop ###
+.bloop/
+.bsp/
+
+project/.bloop/
+project/metals.sbt
+project/project/
 derby.log
 dev/create-release/*final
 dev/create-release/*txt
