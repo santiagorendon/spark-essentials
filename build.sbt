@@ -2,7 +2,9 @@ name := "spark-essentials"
 
 version := "0.2"
 
-scalaVersion := "2.13.12"
+scalaVersion := "2.13.18"
+
+javaOptions ++= Seq("--add-opens", "java.base/sun.nio.ch=ALL-UNNAMED")
 
 val sparkVersion = "3.5.0"
 val postgresVersion = "42.6.0"

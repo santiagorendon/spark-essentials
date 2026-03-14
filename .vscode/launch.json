@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "scala",
+      "request": "launch",
+      "name": "Playground",
+      "mainClass": "playground.Playground",
+      "buildTarget": "file:/C:/Users/santi/OneDrive/Desktop/Workspace/spark-essentials/?id=spark-essentials",
+      "args": [],
+      "jvmOptions": ["--add-opens", "java.base/sun.nio.ch=ALL-UNNAMED"],
+      "env": {}
+    }
+  ]
+}
