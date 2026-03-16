@@ -176,4 +176,5 @@ moviesDF.write \
     .option("dbtable", "public.movies") \
     .save()
 
-    
+
+spark.stop()

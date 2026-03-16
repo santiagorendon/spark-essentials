@@ -132,3 +132,7 @@ moviesDF = spark.read.format("json").load("src/main/resources/data/movies.json")
 moviesDF.show()
 moviesDF.printSchema()
 print(moviesDF.count())
+
+
+
+spark.stop()
