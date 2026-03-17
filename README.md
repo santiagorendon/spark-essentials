@@ -31,7 +31,7 @@ docker compose -f docker-compose.pyspark.yml build
 ```
 
 Run the default lesson script:
-```
+`col``
 docker compose -f docker-compose.pyspark.yml run --rm pyspark-runner
 ```
 
