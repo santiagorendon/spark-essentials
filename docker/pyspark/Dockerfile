@@ -12,7 +12,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends curl default-jdk-headless procps \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir pyspark==3.5.0
+RUN pip install --no-cache-dir pyspark==3.5.0 jupyterlab ipykernel
 
 RUN set -eux; \
     jars_dir="$(python -c "import pathlib, pyspark; print(pathlib.Path(pyspark.__file__).resolve().parent / 'jars')")"; \
@@ -21,5 +21,7 @@ RUN set -eux; \
       -o "${jars_dir}/postgresql-${POSTGRES_VERSION}.jar"
 
 WORKDIR /workspace
+
+EXPOSE 8888
 
 CMD ["python", "src/main/python/dataframes_basics.py"]

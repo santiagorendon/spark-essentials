@@ -25,13 +25,8 @@ build-images.bat
 
 If you want to avoid installing Java locally, you can run the PySpark examples inside a container instead.
 
-Build the image:
-```
-docker compose -f docker-compose.pyspark.yml build
-```
-
 Run the default lesson script:
-`col``
+```
 docker compose -f docker-compose.pyspark.yml run --rm pyspark-runner
 ```
 
@@ -40,7 +35,54 @@ Run a different Python file from this repo:
 docker compose -f docker-compose.pyspark.yml run --rm pyspark-runner python src/main/python/your_script.py
 ```
 
-This container includes Python 3.11, OpenJDK 17, and PySpark 3.5.0, and mounts the repo into `/workspace` so your code and data stay on the host machine.
+### Run the joins notebook in Docker
+
+Start Jupyter Lab:
+```
+docker compose -f docker-compose.pyspark.yml up --build pyspark-notebook
+```
+
+Or use the shortcut script:
+```
+start-pyspark-notebook.bat
+```
+on Windows, or:
+```
+./start-pyspark-notebook.sh
+```
+on Linux/Mac.
+
+Keep that terminal running while you use the notebook. The notebook server stops when you stop the container.
+
+Then open this URL in your browser or connect VS Code to it:
+```
+http://localhost:8888/lab?token=spark-essentials
+```
+
+The notebook version of the joins lesson lives at:
+```
+src/main/python/joins.ipynb
+```
+
+To stop the notebook server:
+```
+docker compose -f docker-compose.pyspark.yml down
+```
+
+This container includes Python 3.11, OpenJDK 17, PySpark 3.5.0, and Jupyter Lab, and mounts the repo into `/workspace` so your code and data stay on the host machine.
+
+### Open the notebook from VS Code
+
+1. Start the notebook server with one of the commands above.
+2. Open `src/main/python/joins.ipynb` in VS Code.
+3. If VS Code asks how to connect, choose `Existing Jupyter Server`.
+4. When VS Code asks for the server URL, paste:
+```
+http://localhost:8888/lab?token=spark-essentials
+```
+5. Run cells normally.
+
+If VS Code says it cannot connect, check the terminal running Docker first. A healthy server keeps running and does not exit back to the prompt.
 
 ### VS Code workspace integration
 
