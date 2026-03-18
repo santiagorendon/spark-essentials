@@ -12,7 +12,18 @@
 wide transformation
 join data
 discareded
+left join
+right join
+outer join
+left outer
+right outer
+left semi
+right semi
+left anti join
+right anti join
 
+
+dealing with columns after joins
 ## Chunk 1 converted
 - the `3 main points`
 - the `plain English explanation`
