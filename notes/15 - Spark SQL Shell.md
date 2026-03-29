@@ -20,7 +20,7 @@ see commands in here: C:\Users\santi\OneDrive\Desktop\Workspace\spark-essentials
 **IMPORTANT INSTRUCTIONS TO GO TO SHELL** Commands:
 1. docker-compose up --scale spark-worker=3
     1.1 find the log that says Container spark-cluster-spark-master-1 Created to see master container name to use in next command
-2. run docker exec -it spark-cluser-spark-master-1 bash 
+2. run docker exec -it spark-cluster-spark-master-1 bash 
 3. run ./bin/spark-sql inside the host this will start a sql shell
 4. Run commands 
  4.1 show databases;
