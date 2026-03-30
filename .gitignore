@@ -191,6 +191,7 @@ streaming-tests.log
 unit-tests.log
 work/
 docs/.jekyll-metadata
+lecture_notes/
 
 # For Hive
 TempStatsStore/
